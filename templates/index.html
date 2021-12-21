@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container feed">
+    {% for post in posts %}
+      <article class="post">
+        <header class="post_title row">
+            <h1 class="heading">{{ post['title'] }}</h1>
+            <div class="time">on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+        </header>
+        <p class="post_content">{{ post['body'] }}</p>
+      </article>
+      {% if not loop.last %}
+        <hr>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}

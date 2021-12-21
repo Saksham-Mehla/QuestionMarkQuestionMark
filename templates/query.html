@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container feed">
+        <div class="row">
+            <h1 class="Success">Post Successful</h1>
+        </div>
+        <div class="row">
+            <ul class="queries">
+                <li>
+                    <a href="{{ url_for('edit_create.editor') }}">View my posts</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('edit_create.create') }}">Create new post.</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

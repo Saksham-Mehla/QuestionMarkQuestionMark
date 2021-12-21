@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block head %}{% endblock %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src= "https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+        <script src="{{ url_for('static', filename='javascript/jquery-3.6.0.js') }}"></script>
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid p-0">
+                <nav class="navbar navbar-expand-lg navbar-fixed-top border-bottom">
+                    <!--#ffc74d-->
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <img class="logo" src="{{ url_for('static', filename='img/calvin.jpeg')}}" />
+                            <a class="links navbar-brand" href="https://youtu.be/wYeFAlVC8qU"> 
+                                ??
+                            </a>
+                        </div>
+
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('blog.index') }}">Live Journal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('about.info') }}">About Me</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('tikitaka.football') }}">TikiTaka</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('drift.car') }}">Drift</a>
+                            </li>
+                        </ul>
+                        <script>
+                            var nav = document.getElementsByClassName('nav-link');
+                            var t = document.getElementsByTagName('title')[0];
+                            if(t.innerHTML=="Posts") {
+                                nav[0].style.color = "#b0b0b0";
+                            }
+                            else if(t.innerHTML=="TikiTaka") {
+                                nav[2].style.color = "#b0b0b0";
+                            }
+                            else if(t.innerHTML=="Drift") {
+                                nav[3].style.color = "#b0b0b0";
+                            }
+                            else if(t.innerHTML=="About Me") {                
+                                nav[1].style.color = "#b0b0b0";
+                            }
+                        </script>
+                    </div>
+                </nav>
+            </div>
+        </header> 
+        <main class="container-fluid feed">
+            <div class="row" style="height: 20px;"></div>
+            {% block content %}{% endblock %}
+            <div class="row" style="height: 20px;"></div>
+        </main> 
+        
+        <footer class="footer-container row border-top">
+            <div class="row views">
+                <p>
+                    No. of visits = <span id="v"></span>
+                </p>
+            </div>
+            <script>
+                var visits = 0;
+                if(localStorage.visits){
+                    visits = parseInt(localStorage.visits);
+                }
+                visits+=1;
+                localStorage.setItem('visits', visits);
+                var v = document.getElementById('v');
+                v.innerHTML = visits;
+            </script>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <p class="foot-text" align="right"> 
+                    A Saksham Mehla production &#169 
+                    <a href="https://github.com/Saksham-Mehla" target="_blank"><img class="icon github" src="{{url_for('static', filename='img/github.svg')}}" /></a>
+                    <a href="https://www.linkedin.com/in/saksham-mehla-0110561a7" target="_blank"><img class="icon linkedin" src="{{url_for('static', filename='img/linkedin.svg')}}" /></a>
+                    <a href="https://www.instagram.com/saksham.mhl" target="_blank"><img class="icon instagram" src="{{url_for('static', filename='img/instagram.svg')}}" /></a>
+                    <a href="mailto:sakshammehla@gmail.com" target="_blank"><img class="icon envelope" src="{{url_for('static', filename='img/gmail.svg')}}" /></a>
+                </p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="row" style="height: 10px;"></div>
+                <p align="left"> 
+                    <img src="{{url_for('static', filename='img/chicken.jpeg')}}" height="300" width="400" />
+                </p>
+            </div>
+        </footer>  
+    </body>
+</html>

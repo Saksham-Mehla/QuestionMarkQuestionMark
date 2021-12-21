@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container feed">
+        <div class="row">
+            <h1 class="heading" style="text-align: center;">Create New Post</h1>
+        </div>
+        <div class="post-form">
+            <form method="post">
+                <div class="contanier save-btn">
+                        <input class="btn btn-success" type="submit" value="Post">
+                </div>
+                <div class="row" style="height: 10px;"></div>
+                <div class="row form-title">
+                        <label for="title">Title</label>
+                        <div class="col-auto">
+                            <input class="form-control-lg" name="title" id="title" value="{{ request.form['title'] }}" required>
+                        </div>              
+                </div>
+                <div class="row form-body">
+                        <label for="body">Body</label>
+                        <div class="col-12">
+                            <textarea class="form-control" name="body" id="body">{{ request.form['body'] }}</textarea>
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+

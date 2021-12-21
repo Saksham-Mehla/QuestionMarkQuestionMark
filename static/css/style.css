@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Yomogi&family=Noto+Sans&display=swap');
+
+a.nav-link {
+    font-family: 'Yomogi', cursive;  font-weight: bold; color: #166bda;
+}
+a.navbar-brand {
+    font-size: 40px;
+}
+
+a.nav-link {
+    font-size: 20px; color: #166bda;
+}
+a.nav-link:hover{
+    font-size: 20px; color: #b0b0b0;
+}
+
+.navbar {
+    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 4px 0 rgba(0, 0, 0, 0.19);
+}
+.container-fluid.feed {
+    background-image: url('../img/collage.jpg');
+    height: max-content;
+}
+.container.feed {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+    border-left: black;
+    border-right: black;
+}
+
+h1.heading{
+    font-family: 'Roboto Mono', monospace;
+    padding-left: 20px;
+}
+
+.post_title .time {
+    font-style: italic;
+    color: #b0b0b0;
+}
+
+.post_content {
+    font-family: 'Noto Sans', sans-serif;
+}
+a > img.icon{
+    height: 30px;
+    width: 30px;
+}
+.foot-text {
+    padding-top: 160px;
+    size: 40px;
+    font-family: 'Roboto Mono', monospace;
+    color: #A9A9A9;
+}
+.footer-container .row .border-top {
+    padding-top: 10px;
+    background-color: white;
+    border-top: #b0b0b0;
+}
+.form-title {
+    font-size: 30px;
+}
+
+.form-body {
+    font-size: 24px;
+}
+
+.navbar .navbar-expand-lg .navbar-fixed-top .border-bottom {
+    background-color:#ffffff; 
+    border-color: #b0b0b0;
+}
+
+.container-fluid .new-btn  {
+    text-align: right;
+}
+
+.edit-btn {
+    text-align: right;
+}
+.row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.post-form {
+    padding: 10px;
+}
+
+label{
+    font-family: 'Roboto Mono', monospace;
+    padding-left: 20px;
+    size: 20px;
+}
+
+.container .save-btn  {
+    text-align: right;
+}
+
+.Success {
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    padding-bottom: 10px;
+}
+
+.queries {
+    text-indent: 200px;
+    font-size: 20px;
+}
+
+.views {
+    text-align: right;
+    font-family: 'Roboto Mono', monospace;
+}
